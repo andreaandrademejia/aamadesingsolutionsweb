@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AQUI Pega el resto de tu código CSS personalizado con @apply */
+.buttons-contactame a {
+	@apply inline-flex justify-center items-center py-3 px-6 rounded-full font-semibold transition-all duration-500;
+}
+
+.buttons-contactame a.btn-whatsapp {
+	@apply text-blue-500 bg-transparent border-2 border-blue-500 hover:text-white hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/50;
+}
+
+.buttons-contactame a.btn-linkedin {
+	@apply text-white bg-blue-500 hover:shadow-lg hover:shadow-blue-500/50;
+}
+
+/* Estilos para el efecto hover en las cajas de servicios */
+.services-container .services-box {
+	@apply transition-all duration-500 ease-in-out;
+}
+
+.services-container .services-box.hovered {
+	@apply scale-105;
+}
+
+/* Estilos para el efecto hover en las cajas de proyectos */
+.portfolio-container .portfolio-box {
+	@apply transition-all duration-500 ease-in-out;
+}
+
+.portfolio-container .portfolio-box.hovered {
+	@apply scale-105;
+}
+
+/* Estilo para el slider de imágenes del mapa del sitio */
+#about-image-section .active {
+	@apply bg-blue-500;
+}
+
+/* Estilos para el modal */
+dialog {
+	margin: 0;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 100;
+	max-width: 90%;
+	width: fit-content;
+}
+
+dialog::backdrop {
+	background: rgba(0, 0, 0, 0.5);
+}

@@ -1,16 +1,271 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AAM DESING & SOLUTIONS WEB</title>
+  <title>AAM DESIGN & SOLUTIONS WEB</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .container-slider img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    /* Animación para la imagen de fondo */
+    @keyframes slowZoom {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.15);
+      }
+    }
+
+    /* Estilo para el modal del aviso de privacidad */
+    #privacy-modal:target {
+      display: flex;
+    }
+  </style>
 </head>
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+<body id="body" class="scroll-smooth bg-gray-50 text-gray-900 leading-relaxed antialiased min-h-screen">
+
+  <header id="header"
+    class="fixed top-0 left-0 w-full px-5 py-3 flex justify-between items-center z-50 bg-gray-900 shadow-lg">
+    <div>
+      <a href="index.html" class="text-2xl font-bold text-blue-300 hover:text-blue-100 transition-all">
+        AAM DESIGN & SOLUTIONS
+      </a>
+    </div>
+
+    <div id="menu-icon" class="md:hidden cursor-pointer z-[100] text-white text-3xl">
+      <i class='bx bx-menu'></i>
+    </div>
+
+    <nav id="navbar" class="hidden md:flex items-center space-x-8">
+      <div class="relative group">
+        <button
+          class="text-white group-hover:text-blue-300 py-2 font-medium flex items-center gap-1 focus:outline-none">
+          Inicio <i class='bx bx-chevron-down'></i>
+        </button>
+
+        <div
+          class="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 z-50 border-t-4 border-blue-600">
+          <a href="#body"
+            class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Volver
+            arriba</a>
+          <a href="blog.html"
+            class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-semibold">Blog
+            Digital</a>
+          <a href="faq.html"
+            class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-semibold">Preguntas
+            Frecuentes</a>
+        </div>
+      </div>
+
+      <a href="#about" class="text-white hover:text-blue-300 py-2 font-medium">Sobre Nosotros</a>
+      <a href="#services" class="text-white hover:text-blue-300 py-2 font-medium">Servicios</a>
+      <a href="#contact"
+        class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-500 transition-all shadow-md font-bold">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="pt-16">
+    <section class="relative w-full h-[85vh] overflow-hidden bg-gray-900">
+      <img src="./src/assets/images/Gemini_Generated_Image_16amu916amu916am.png" alt="Marketing Digital"
+        class="absolute inset-0 w-full h-full object-cover opacity-60"
+        style="animation: slowZoom 20s infinite alternate;">
+
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent flex items-center justify-start px-8 md:px-24">
+        <div class="max-w-3xl" data-aos="fade-right">
+          <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-tight drop-shadow-2xl">
+            Soluciones <span class="text-blue-400">Digitales</span><br>
+            <span class="text-3xl md:text-5xl font-light italic text-blue-100">A tu medida</span>
+          </h1>
+          <p class="text-gray-200 mt-6 text-lg md:text-xl max-w-xl drop-shadow-md">
+            Potenciamos tu marca con diseño web de vanguardia, e-commerce y estrategias digitales de alto
+            impacto.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#services"
+              class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg">
+              Ver Paquetes
+            </a>
+            <a href="#contact"
+              class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg">
+              Asesoría Gratis
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-4 md:px-16 lg:px-24 bg-gray-50" id="about">
+      <div class="container mx-auto">
+        <h2 class="text-center text-3xl md:text-5xl font-extrabold text-blue-800 mb-12" data-aos="fade-up">Sobre
+          Nosotros</h2>
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg" data-aos="fade-right">
+            <div class="flex container-slider transition-all duration-500">
+              <img src="./src/assets/images/neg-plantilla-10.jpg" alt="Imagen 1">
+              <img src="./src/assets/images/neg-plantilla-11.jpg" alt="Imagen 2">
+            </div>
+          </div>
+          <div class="w-full md:w-1/2" data-aos="fade-left">
+            <h3 class="text-2xl font-bold text-blue-700 mb-4 text-left">Desarrollo empresarial</h3>
+            <p class="text-gray-600">Transformamos tu visión en una presencia digital sólida en Zapopan, Jalisco.
+              Ayudamos a empresas a escalar con tecnología de punta.</p>
+            <a href="#contact"
+              class="inline-block mt-4 bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition-all">Más
+              Detalles</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white" id="services">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-extrabold text-blue-800 mb-12">Nuestros Servicios</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div class="p-8 bg-gray-50 rounded-xl hover:shadow-xl transition-all border-b-4 border-blue-500"
+            data-aos="zoom-in">
+            <i class="fa fa-code text-5xl text-blue-600 mb-4"></i>
+            <h5 class="text-xl font-bold mb-2">Diseño Web Personalizado</h5>
+            <p class="text-gray-600">E-commerce, landing pages y sitios completos adaptados a tu marca.</p>
+          </div>
+          <div class="p-8 bg-gray-50 rounded-xl hover:shadow-xl transition-all border-b-4 border-blue-500"
+            data-aos="zoom-in">
+            <i class="fa fa-server text-5xl text-blue-600 mb-4"></i>
+            <h5 class="text-xl font-bold mb-2">Hosting y Dominios</h5>
+            <p class="text-gray-600">Gestión técnica profesional para que no tengas que preocuparte por nada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white pt-16 pb-8 px-8 md:px-16 border-t border-gray-800">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="space-y-4">
+        <div class="flex items-center space-x-2">
+          <img src="./src/assets/images/Logo for AAM Design Solutions Web - Version 1.png" alt="Logo AAM"
+            class="h-10 w-auto">
+          <span class="text-xl font-bold text-blue-300">AAM DESIGN</span>
+        </div>
+        <p class="text-gray-400 text-sm">
+          Expertos en desarrollo web y soluciones digitales en Zapopan, Jalisco. Creamos el futuro de tu negocio hoy
+          mismo.
+        </p>
+        <div class="flex space-x-4 text-2xl">
+          <a href="#" class="hover:text-blue-400 transition-colors"><i class='bx bxl-facebook'></i></a>
+          <a href="#" class="hover:text-blue-400 transition-colors"><i class='bx bxl-instagram'></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold mb-6 border-b border-blue-500 inline-block">Explorar</h3>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#body" class="hover:text-white transition-all">Inicio</a></li>
+          <li><a href="#about" class="hover:text-white transition-all">Sobre Nosotros</a></li>
+          <li><a href="#services" class="hover:text-white transition-all">Servicios</a></li>
+          <li><a href="#contact" class="hover:text-white transition-all">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold mb-6 border-b border-blue-500 inline-block">Legal</h3>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#privacy-modal" class="hover:text-white transition-all">Aviso de Privacidad</a></li>
+          <li><a href="#" class="hover:text-white transition-all">Términos y Condiciones</a></li>
+          <li><a href="#" class="hover:text-white transition-all">Política de Cookies</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold mb-6 border-b border-blue-500 inline-block">Atención</h3>
+        <ul class="space-y-3 text-gray-400">
+          <li class="flex items-center"><i class='bx bx-time mr-2 text-blue-400'></i> Lun - Sab: 8am - 6pm</li>
+          <li class="flex items-center"><i class='bx bx-envelope mr-2 text-blue-400 text-xs'></i>
+            andreaandrademejia@gmail.com</li>
+          <li class="flex items-center"><i class='bx bxl-whatsapp mr-2 text-blue-400'></i> +52 33 1386 2743</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+      <p>&copy; 2026 AAM Design & Solutions. Todos los derechos reservados. Zapopan, Jalisco.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/523313862743" target="_blank"
+    class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-all z-[100]">
+    <i class='bx bxl-whatsapp'></i>
+  </a>
+
+  <div id="privacy-modal" class="fixed inset-0 bg-black/80 z-[200] hidden items-center justify-center p-4">
+    <div
+      class="bg-white text-gray-800 p-8 rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto relative shadow-2xl">
+      <a href="#" class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-red-500">&times;</a>
+      <h2 class="text-2xl font-bold text-blue-800 mb-4">Aviso de Privacidad</h2>
+      <div class="space-y-4 text-sm text-gray-600 text-justify">
+        <p><strong>Responsable:</strong> AAM Design & Solutions, con domicilio en Zapopan, Jalisco.</p>
+        <p><strong>Finalidad:</strong> Los datos personales que recabamos serán utilizados para proveer los servicios de
+          desarrollo web, registro de dominios y gestión de hosting solicitados.</p>
+        <p><strong>Transferencia:</strong> Le informamos que sus datos podrán ser compartidos con proveedores de
+          registro de dominios y servicios de hosting para concretar la compra de sus activos digitales a su nombre.</p>
+        <p>Usted tiene derecho a conocer qué datos personales tenemos de usted, para qué los utilizamos y las
+          condiciones del uso que les damos (Acceso). Asimismo, es su derecho solicitar la corrección de su información
+          personal en caso de que esté desactualizada, sea inexacta o incompleta.</p>
+      </div>
+      <div class="mt-8 text-center">
+        <a href="#"
+          class="bg-blue-600 text-white px-8 py-2 rounded-full hover:bg-blue-700 transition-all font-bold">Entendido</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Script menú móvil
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.getElementById('navbar');
+
+    menuIcon.onclick = () => {
+      navbar.classList.toggle('hidden');
+      navbar.classList.toggle('flex');
+      navbar.classList.toggle('flex-col');
+      navbar.classList.toggle('absolute');
+      navbar.classList.toggle('top-16');
+      navbar.classList.toggle('left-0');
+      navbar.classList.toggle('w-full');
+      navbar.classList.toggle('bg-gray-900');
+      navbar.classList.toggle('p-5');
+      navbar.classList.toggle('space-y-4'); // Espaciado extra en móvil
+      navbar.classList.toggle('space-x-8'); // Quita el espacio horizontal
+    };
+  </script>
 </body>
 
 </html>

@@ -23,7 +23,7 @@ const Footer = () => {
 
 				<p className="text-gray-400 text-sm">
 					© {new Date().getFullYear()} AAM Design. Todos los derechos
-					reservados. Creado con React y Tailwind CSS.
+					reservados.
 				</p>
 			</div>
 		</footer>
