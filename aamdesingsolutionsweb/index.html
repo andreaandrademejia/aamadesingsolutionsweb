@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AAM DESIGN & SOLUTIONS WEB</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .container-slider img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    @keyframes slowZoom {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.15);
+      }
+    }
+
+    #privacy-modal:target {
+      display: flex;
+    }
+
+    .service-card:hover i {
+      transform: scale(1.1) rotate(5deg);
+      transition: all 0.3s;
+    }
+
+    /* --- MEJORAS DEL MODAL --- */
+
+    #infoModal {
+      backdrop-filter: blur(10px);
+      /* Desenfoque más profundo y profesional */
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Tarjeta Centrada y Legible */
+    .modal-card {
+      background: white;
+      border-radius: 32px;
+      /* Bordes más suaves */
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+      text-align: center;
+      /* Centra todo el contenido */
+      max-width: 500px;
+      width: 100%;
+    }
+
+    /* Colores de texto para no cansar la vista */
+    #modalTitle {
+      color: #1e3a8a;
+      /* Azul marino fuerte para jerarquía */
+      font-weight: 800;
+    }
+
+    #modalBody {
+      color: #374151;
+      /* Gris oscuro para lectura cómoda */
+      line-height: 1.7;
+    }
+
+    /* Contenedor de texto con fondo neutro */
+    .modal-text-container {
+      background-color: #f8fafc;
+      border: 1px solid #f1f5f9;
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Botón Moderno y Centrado */
+    .btn-modal {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      transition: all 0.3s ease;
+      border-radius: 16px;
+      color: white;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn-modal:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+      filter: brightness(1.1);
+    }
+
+    /* Animación de Hundimiento (Sinking) */
+    @keyframes sinkingOut {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+      }
+
+      100% {
+        transform: scale(0.5);
+        opacity: 0;
+        filter: blur(10px);
+      }
+    }
+
+    @keyframes risingIn {
+      0% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .slide-out {
+      animation: sinkingOut 1s forwards;
+    }
+
+    .slide-in {
+      animation: risingIn 1s forwards;
+    }
+  </style>
+</head>
+
+<body id="body" class="scroll-smooth bg-gray-50 text-gray-900 antialiased">
+
+  <header id="header"
+    class="fixed top-0 left-0 w-full px-5 py-3 flex justify-between items-center z-50 bg-gray-900 shadow-lg">
+    <div>
+      <a href="index.html" class="text-2xl font-bold text-blue-300 hover:text-blue-100 transition-all">
+        AAM DESIGN & SOLUTIONS
+      </a>
+    </div>
+
+    <div id="menu-icon" class="md:hidden cursor-pointer z-[100] text-white text-3xl">
+      <i class='bx bx-menu'></i>
+    </div>
+
+    <nav id="navbar" class="hidden md:flex items-center space-x-8">
+      <div class="relative group">
+        <button
+          class="text-white group-hover:text-blue-300 py-2 font-medium flex items-center gap-1 focus:outline-none">
+          Inicio <i class='bx bx-chevron-down'></i>
+        </button>
+        <div
+          class="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 z-50 border-t-4 border-blue-600">
+          <a href="./src/assets/estructuras/blog.html"
+            class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-semibold">Blog
+            Digital</a>
+          <a href="./src/assets/estructuras/faq.html"
+            class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-semibold">Preguntas
+            Frecuentes</a>
+        </div>
+      </div>
+
+      <a href="#about" class="text-white hover:text-blue-300 py-2 font-medium">Sobre Nosotros</a>
+      <a href="#services" class="text-white hover:text-blue-300 py-2 font-medium">Servicios</a>
+
+      <div class="relative group">
+        <button
+          class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full font-medium transition-all flex items-center shadow-md">
+          Contacto <i class='bx bx-chevron-down ml-2'></i>
+        </button>
+        <div
+          class="absolute right-0 mt-0 bg-white text-gray-800 border shadow-xl rounded-md overflow-hidden z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 min-w-[200px] border-t-4 border-blue-600">
+          <div class="py-2">
+            <a href="tel:+523313862743" class="block px-4 py-3 hover:bg-blue-50 flex items-center text-sm">
+              <i class='bx bx-phone-call mr-2 text-blue-600'></i> Llamar ahora
+            </a>
+
+            <a href="https://wa.me/523313862743" class="block px-4 py-3 hover:bg-blue-50 flex items-center text-sm">
+              <i class='bx bx-message-dots mr-2 text-blue-600'></i> Cotizar Proyecto
+            </a>
+
+            <a href="https://www.linkedin.com/in/andrea-arcelia-andrade-mejia-746660168/" target="_blank"
+              class="block px-4 py-3 hover:bg-blue-50 flex items-center text-sm">
+              <i class='bx bxl-linkedin mr-2 text-blue-700'></i> LinkedIn
+            </a>
+          </div>
+          <a href="https://wa.me/523313862743" target="_blank"
+            class="block px-4 py-3 hover:bg-blue-50 flex items-center text-sm"><i
+              class='bx bxl-whatsapp mr-2 text-green-600'></i> WhatsApp</a>
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-16">
+    <section class="relative w-full h-[85vh] overflow-hidden bg-gray-900">
+      <img src="./src/assets/images/Gemini_Generated_Image_16amu916amu916am.png" alt="Marketing Digital"
+        class="absolute inset-0 w-full h-full object-cover opacity-60"
+        style="animation: slowZoom 20s infinite alternate;">
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent flex items-center justify-start px-8 md:px-24">
+        <div class="max-w-3xl" data-aos="fade-right">
+          <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-tight">
+            Soluciones <span class="text-blue-400">Digitales</span><br>
+            <span class="text-3xl md:text-5xl font-light italic text-blue-100">A tu medida</span>
+          </h1>
+          <p class="text-gray-200 mt-6 text-lg md:text-xl max-w-xl">Potenciamos tu marca con diseño web de vanguardia,
+            facturación electrónica y presencia profesional en Google.</p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#services"
+              class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg">Ver
+              Servicios</a>
+            <a href="#contact"
+              class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg">Asesoría
+              Gratis</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-4 md:px-16 lg:px-24 bg-gray-50" id="about">
+      <div class="container mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="w-full md:w-1/2 relative group" data-aos="fade-right">
+          <div class="overflow-hidden rounded-3xl shadow-2xl relative h-[400px]">
+            <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
+              <img src="./src/assets/images/AdobeStock_1190459988_Preview.jpeg" class="w-full h-full object-cover"
+                alt="Tecnología">
+            </div>
+            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+              <img src="./src/assets/images/AdobeStock_1209933871_Preview.jpeg" class="w-full h-full object-cover"
+                alt="Servidores">
+            </div>
+            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+              <img src="./src/assets/images/AdobeStock_1215489851_Preview.jpeg" class="w-full h-full object-cover"
+                alt="Diseño Web">
+            </div>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+          </div>
+
+          <div class="flex justify-center mt-4 gap-2">
+            <div class="dot w-3 h-1 bg-blue-600 rounded-full transition-all duration-300"></div>
+            <div class="dot w-3 h-1 bg-gray-300 rounded-full transition-all duration-300"></div>
+            <div class="dot w-3 h-1 bg-gray-300 rounded-full transition-all duration-300"></div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2" data-aos="fade-left">
+          <h2 class="text-blue-900 text-4xl font-extrabold mb-6">Expertos en Zapopan</h2>
+          <p class="text-gray-600 text-lg mb-6 text-justify leading-relaxed">
+            En <strong>AAM DESIGN & SOLUTIONS</strong>, transformamos ideas en ecosistemas digitales de alto impacto.
+            Nos especializamos en arquitectura web escalable, asegurando que cada proyecto no solo sea estético, sino
+            una herramienta de venta eficiente.
+          </p>
+          <div class="grid grid-cols-2 gap-4">
+            <div
+              class="group p-4 bg-white rounded-2xl shadow-sm border border-gray-100 hover:border-blue-500 transition-all duration-300">
+              <i class='bx bx-brush text-blue-600 text-2xl mb-2'></i>
+              <p class="font-bold text-blue-900">Diseño UX/UI</p>
+            </div>
+            <div
+              class="group p-4 bg-white rounded-2xl shadow-sm border border-gray-100 hover:border-blue-500 transition-all duration-300">
+              <i class='bx bx-support text-blue-600 text-2xl mb-2'></i>
+              <p class="font-bold text-blue-900">Soporte Local</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white" id="services">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">Lo que hacemos por ti</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto italic text-lg">Soluciones integrales para emprendedores y empresas
+            consolidadas.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="service-card p-8 bg-gray-50 rounded-2xl hover:bg-blue-900 hover:text-white transition-all duration-300 group shadow-sm border border-gray-100"
+            data-aos="zoom-in">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-400 transition-colors">
+              <i class="fa fa-laptop-code text-3xl text-blue-600 group-hover:text-white"></i>
+            </div>
+            <h5 class="text-xl font-bold mb-3">Diseño Web Pro</h5>
+            <p class="text-gray-600 group-hover:text-blue-100 text-sm">Páginas personalizadas: Básicas, Profesionales y
+              Completas con optimización SEO.</p>
+          </div>
+          <div
+            class="service-card p-8 bg-gray-50 rounded-2xl hover:bg-blue-900 hover:text-white transition-all duration-300 group shadow-sm border border-gray-100"
+            data-aos="zoom-in" data-aos-delay="100">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-400 transition-colors">
+              <i class="fa fa-file-invoice-dollar text-3xl text-blue-600 group-hover:text-white"></i>
+            </div>
+            <h5 class="text-xl font-bold mb-3">Facturación & Sistemas</h5>
+            <p class="text-gray-600 group-hover:text-blue-100 text-sm">Conectamos tu web a sistemas de facturación
+              automática para tus clientes.</p>
+          </div>
+          <div
+            class="service-card p-8 bg-gray-50 rounded-2xl hover:bg-blue-900 hover:text-white transition-all duration-300 group shadow-sm border border-gray-100"
+            data-aos="zoom-in" data-aos-delay="200">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-400 transition-colors">
+              <i class="fa fa-server text-3xl text-blue-600 group-hover:text-white"></i>
+            </div>
+            <h5 class="text-xl font-bold mb-3">Hosting & Dominios</h5>
+            <p class="text-gray-600 group-hover:text-blue-100 text-sm">Servicios de configuración, conexión de dominio y
+              mantenimiento técnico mensual.</p>
+          </div>
+          <div
+            class="service-card p-8 bg-gray-50 rounded-2xl hover:bg-blue-900 hover:text-white transition-all duration-300 group shadow-sm border border-gray-100"
+            data-aos="zoom-in">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-400 transition-colors">
+              <i class="fa fa-qrcode text-3xl text-blue-600 group-hover:text-white"></i>
+            </div>
+            <h5 class="text-xl font-bold mb-3">Menús & Tarjetas Digitales</h5>
+            <p class="text-gray-600 group-hover:text-blue-100 text-sm">Menús interactivos para restaurantes y tarjetas
+              de presentación con código QR.</p>
+          </div>
+          <div
+            class="service-card p-8 bg-gray-50 rounded-2xl hover:bg-blue-900 hover:text-white transition-all duration-300 group shadow-sm border border-gray-100"
+            data-aos="zoom-in" data-aos-delay="100">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-400 transition-colors">
+              <i class="fab fa-google text-3xl text-blue-600 group-hover:text-white"></i>
+            </div>
+            <h5 class="text-xl font-bold mb-3">Google Business</h5>
+            <p class="text-gray-600 group-hover:text-blue-100 text-sm">Creación y optimización de cuenta Google Business
+              para aparecer en Maps.</p>
+          </div>
+          <div
+            class="service-card p-8 bg-gray-50 rounded-2xl hover:bg-blue-900 hover:text-white transition-all duration-300 group shadow-sm border border-gray-100"
+            data-aos="zoom-in" data-aos-delay="200">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-400 transition-colors">
+              <i class="fa fa-id-badge text-3xl text-blue-600 group-hover:text-white"></i>
+            </div>
+            <h5 class="text-xl font-bold mb-3">Portafolios de Ventas</h5>
+            <p class="text-gray-600 group-hover:text-blue-100 text-sm">Portafolios de trabajo para freelancers y
+              catálogos digitales de alta conversión.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-4 md:px-16 bg-gray-900" id="contact">
+      <div class="container mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          <div class="text-white" data-aos="fade-right">
+            <h2 class="text-4xl font-extrabold mb-6">¿Listo para dar el gran paso?</h2>
+            <p class="text-blue-200 text-lg mb-8">Selecciona los servicios de tu interés y recibe una cotización
+              personalizada por WhatsApp.</p>
+
+            <div class="space-y-6">
+              <div class="flex items-center space-x-4">
+                <i class='bx bxs-check-shield text-3xl text-blue-400'></i>
+                <span>Garantía de satisfacción y soporte técnico.</span>
+              </div>
+              <div class="flex items-center space-x-4">
+                <i class='bx bxs-zap text-3xl text-yellow-400'></i>
+                <span>Configuración rápida de dominios y hosting.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 md:p-10 rounded-3xl shadow-2xl" data-aos="fade-left">
+            <form id="whatsappForm" class="space-y-5">
+              <input type="text" id="name" placeholder="Tu Nombre Completo" required
+                class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-blue-500 outline-none transition-all">
+
+              <div class="space-y-3">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">¿Qué servicios necesitas?</p>
+                <div class="grid grid-cols-1 gap-2">
+                  <label
+                    class="flex items-center justify-between p-3 border rounded-xl hover:bg-blue-50 cursor-pointer transition-all">
+                    <div class="flex items-center">
+                      <input type="checkbox" name="service" value="Paquete Dominio Total"
+                        class="w-5 h-5 text-blue-600 rounded mr-3">
+                      <span class="text-sm font-medium text-gray-700">Paquete Dominio Total</span>
+                    </div>
+                    <button type="button" onclick="showInfo('dominio')" class="text-blue-500 text-xs"><i
+                        class='bx bx-info-circle'></i> Info</button>
+                  </label>
+
+                  <label
+                    class="flex items-center justify-between p-3 border rounded-xl hover:bg-blue-50 cursor-pointer transition-all">
+                    <div class="flex items-center">
+                      <input type="checkbox" name="service" value="Facturación Web"
+                        class="w-5 h-5 text-blue-600 rounded mr-3">
+                      <span class="text-sm font-medium text-gray-700">Sistema de Facturación</span>
+                    </div>
+                    <button type="button" onclick="showInfo('factura')" class="text-blue-500 text-xs"><i
+                        class='bx bx-info-circle'></i> Info</button>
+                  </label>
+
+                  <label
+                    class="flex items-center justify-between p-3 border rounded-xl hover:bg-blue-50 cursor-pointer transition-all">
+                    <div class="flex items-center">
+                      <input type="checkbox" name="service" value="Web Personalizada"
+                        class="w-5 h-5 text-blue-600 rounded mr-3">
+                      <span class="text-sm font-medium text-gray-700">Web Personalizada (Básica/Pro)</span>
+                    </div>
+                    <button type="button" onclick="showInfo('web')" class="text-blue-500 text-xs"><i
+                        class='bx bx-info-circle'></i> Info</button>
+                  </label>
+
+                  <label
+                    class="flex items-center justify-between p-3 border rounded-xl hover:bg-blue-50 cursor-pointer transition-all">
+                    <div class="flex items-center">
+                      <input type="checkbox" name="service" value="Google Business"
+                        class="w-5 h-5 text-blue-600 rounded mr-3">
+                      <span class="text-sm font-medium text-gray-700">Google Business & Maps</span>
+                    </div>
+                    <button type="button" onclick="showInfo('google')" class="text-blue-500 text-xs"><i
+                        class='bx bx-info-circle'></i> Info</button>
+                  </label>
+
+                  <label class="flex items-center p-3 border rounded-xl hover:bg-blue-50 cursor-pointer transition-all">
+                    <input type="checkbox" id="checkOtro" name="service" value="Otro" onchange="toggleOtro()"
+                      class="w-5 h-5 text-blue-600 rounded mr-3">
+                    <span class="text-sm font-medium text-gray-700">Otro (Especificar)</span>
+                  </label>
+
+                  <div id="wrapperOtro" class="hidden animate__animated animate__fadeIn">
+                    <input type="text" id="detalleOtro" placeholder="¿Qué otro servicio o requerimiento tienes?"
+                      class="w-full px-4 py-2 mt-1 rounded-lg bg-blue-50 border border-blue-200 focus:border-blue-500 outline-none text-sm italic">
+                  </div>
+                </div>
+
+                <textarea id="msg" rows="3" placeholder="Mensaje adicional..."
+                  class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-blue-500 outline-none transition-all"></textarea>
+
+                <button type="button" onclick="sendWhatsApp()"
+                  class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-xl shadow-lg flex items-center justify-center transition-all">
+                  <i class='bx bxl-whatsapp text-2xl mr-2'></i> Enviar
+                </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white pt-16 pb-8 px-8 md:px-16 border-t border-gray-800">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
+      <div class="space-y-4">
+        <div class="flex items-center justify-center md:justify-start space-x-2">
+          <img src="./src/assets/images/Logo for AAM Design Solutions Web - Version 1.png" alt="Logo" class="h-10">
+          <span class="text-xl font-bold text-blue-300">AAM DESIGN</span>
+        </div>
+        <p class="text-gray-400 text-sm">Innovación digital en Zapopan, Jalisco.</p>
+        <div class="flex justify-center md:justify-start space-x-4 text-2xl">
+          <a href="#" class="hover:text-blue-400 transition-colors"><i class='bx bxl-facebook'></i></a>
+          <a href="#" class="hover:text-blue-400 transition-colors"><i class='bx bxl-instagram'></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-6 border-b border-blue-500 inline-block">Explorar</h3>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#about" class="hover:text-white">Nosotros</a></li>
+          <li><a href="#services" class="hover:text-white">Servicios</a></li>
+          <li><a href="./src/assets/estructuras/blog.html" class="hover:text-white">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-6 border-b border-blue-500 inline-block">Legal</h3>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#privacy-modal" class="hover:text-white">Privacidad</a></li>
+          <li><a href="#" class="hover:text-white">Términos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-6 border-b border-blue-500 inline-block">Contacto</h3>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li><i class='bx bx-envelope text-blue-400'></i> andreaandrademejia@gmail.com</li>
+          <li><i class='bx bxl-whatsapp text-blue-400'></i> +52 33 1386 2743</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-16 text-center text-gray-500 text-xs italic">&copy; 2026 AAM Design & Solutions. Zapopan, Jalisco.
+    </div>
+  </footer>
+
+  <div id="infoModal" class="fixed inset-0 bg-gray-900/80 z-[300] hidden items-center justify-center p-4">
+    <div class="modal-card bg-white rounded-[2rem] p-8 animate__animated animate__fadeInUp animate__faster shadow-2xl">
+      <div class="flex justify-center mb-4">
+        <div class="bg-blue-100 p-4 rounded-full">
+          <i class='bx bx-cloud-upload text-4xl text-blue-600'></i>
+        </div>
+      </div>
+
+      <h3 id="modalTitle" class="text-2xl font-black mb-4"></h3>
+
+      <div class="modal-text-container">
+        <p id="modalBody" class="text-sm md:text-base"></p>
+      </div>
+
+      <button onclick="closeModal()"
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl transition-all shadow-lg hover:shadow-blue-500/30">
+        ENTENDIDO, GRACIAS
+      </button>
+    </div>
+  </div>
+
+  <div id="privacy-modal" class="fixed inset-0 bg-black/80 z-[200] hidden items-center justify-center p-4">
+    <div
+      class="bg-white text-gray-800 p-8 rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto relative shadow-2xl text-sm">
+      <a href="#" class="absolute top-4 right-4 text-3xl text-gray-400">&times;</a>
+      <h2 class="text-2xl font-bold text-blue-800 mb-4">Aviso de Privacidad</h2>
+      <p><strong>AAM Design & Solutions</strong>, con domicilio en Zapopan, Jalisco, utilizará sus datos personales para
+        proveer los servicios solicitados y gestionar los registros de dominio ante terceros.</p>
+      <div class="mt-8 text-center"><a href="#"
+          class="bg-blue-600 text-white px-8 py-2 rounded-full font-bold">Cerrar</a></div>
+    </div>
+  </div>
+  <div id="cmplz-cookiebanner"
+    class="fixed bottom-0 left-0 w-full bg-white shadow-[0_-5px_25px_rgba(0,0,0,0.1)] z-[999] p-6 animate__animated animate__fadeInUp">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex-1 text-sm text-gray-700">
+        <h5 class="text-lg font-bold text-blue-900 mb-2">Uso de Cookies</h5>
+        <p>
+          Este sitio utiliza cookies y tecnologías similares para garantizar el correcto funcionamiento del sitio,
+          mejorar tu experiencia y analizar el uso del mismo.
+          Para más información, consulta nuestro <a href="./src/assets/estructuras/aviso-privacidad.html"
+            class="text-blue-600 font-bold underline">Aviso de Privacidad</a> y <a
+            href="./src/assets/estructuras/politica-cookies.html" class="text-blue-600 font-bold underline">Política de
+            Cookies</a>.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <button onclick="acceptAll()"
+          class="bg-[#8cc63f] hover:bg-[#7ab234] text-white px-8 py-3 rounded-md font-bold transition-all min-w-[140px]">
+          Aceptar
+        </button>
+        <button onclick="togglePreferences()"
+          class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-md font-bold border border-gray-300 transition-all">
+          Ver preferencias
+        </button>
+        <button onclick="denyAll()"
+          class="bg-white hover:bg-gray-50 text-gray-400 px-6 py-3 rounded-md font-bold border border-gray-200 transition-all">
+          Rechazar
+        </button>
+      </div>
+    </div>
+
+    <div id="cookie-preferences" class="hidden mt-6 border-t pt-6 transition-all">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <label class="flex items-center gap-2 p-3 border rounded-lg bg-gray-50">
+          <input type="checkbox" checked disabled class="accent-[#8cc63f]">
+          <span class="text-xs"><strong>Funcionales:</strong> Necesarias para el sitio.</span>
+        </label>
+        <label class="flex items-center gap-2 p-3 border rounded-lg hover:bg-blue-50 cursor-pointer">
+          <input type="checkbox" id="pref-stats" class="accent-[#8cc63f]">
+          <span class="text-xs"><strong>Estadísticas:</strong> Ayudan a mejorar el servicio.</span>
+        </label>
+        <label class="flex items-center gap-2 p-3 border rounded-lg hover:bg-blue-50 cursor-pointer">
+          <input type="checkbox" id="pref-marketing" class="accent-[#8cc63f]">
+          <span class="text-xs"><strong>Marketing:</strong> Publicidad personalizada.</span>
+        </label>
+      </div>
+      <button onclick="savePreferences()"
+        class="w-full md:w-auto bg-blue-900 text-white px-6 py-2 rounded font-bold text-sm">
+        Guardar preferencias
+      </button>
+    </div>
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Inicialización de animaciones
+    AOS.init({ duration: 1000, once: true });
+
+    // Lógica del Menú Móvil
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.getElementById('navbar');
+    menuIcon.onclick = () => {
+      navbar.classList.toggle('hidden');
+      navbar.classList.toggle('flex');
+      navbar.classList.toggle('flex-col');
+      navbar.classList.toggle('absolute');
+      navbar.classList.toggle('top-16');
+      navbar.classList.toggle('left-0');
+      navbar.classList.toggle('w-full');
+      navbar.classList.toggle('bg-gray-900');
+      navbar.classList.toggle('p-5');
+      navbar.classList.toggle('space-y-4');
+    };
+
+    // Datos de los Modales de Servicio
+    const infoData = {
+      dominio: {
+        title: "Dominio & Nube Firebase",
+        body: "Incluye registro de dominio (.com/.mx). El hosting se maneja vía Firebase (Plan Blaze); para activarlo, Google requiere una retención inicial de $1,800 MXN que se queda como saldo en tu cuenta. Esto te da acceso a $300 USD de crédito gratuito en Google Ads para anuncios y garantiza que solo pagues lo que tu web consuma realmente."
+      },
+      factura: {
+        title: "Facturación Automática",
+        body: "Conectamos tu sitio con proveedores de CFDI para que tus clientes generen sus facturas al instante. Olvídate de la carga administrativa manual y cumple con el SAT de forma automática."
+      },
+      web: {
+        title: "Desarrollo Web Pro",
+        body: "Creamos una plataforma optimizada para ventas. Diseño responsive de alta fidelidad, tiempos de carga mínimos y estructura SEO para que Google te encuentre fácilmente."
+      },
+      google: {
+        title: "Visibilidad en Google Maps",
+        body: "Configuramos tu ficha de Google Business Pro. Optimizamos fotos, palabras clave y ubicación para que los clientes te contacten directamente desde el buscador."
+      }
+    };
+
+    function showInfo(type) {
+      document.getElementById('modalTitle').innerText = infoData[type].title;
+      document.getElementById('modalBody').innerText = infoData[type].body;
+      document.getElementById('infoModal').classList.remove('hidden');
+      document.getElementById('infoModal').classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('infoModal').classList.add('hidden');
+    }
+
+    // --- NUEVAS FUNCIONES PARA EL FORMULARIO ---
+
+    // Función para mostrar/ocultar el campo extra cuando se marca "Otro"
+    function toggleOtro() {
+      const checkOtro = document.getElementById('checkOtro');
+      const wrapperOtro = document.getElementById('wrapperOtro');
+
+      if (checkOtro.checked) {
+        wrapperOtro.classList.remove('hidden');
+        document.getElementById('detalleOtro').focus();
+      } else {
+        wrapperOtro.classList.add('hidden');
+        document.getElementById('detalleOtro').value = ""; // Limpia el texto si se desmarca
+      }
+    }
+
+    // Función de envío ACTUALIZADA para incluir el campo "Otro"
+    function sendWhatsApp() {
+      const name = document.getElementById('name').value;
+      const extraMsg = document.getElementById('msg').value || "Sin comentarios adicionales";
+      const detalleOtro = document.getElementById('detalleOtro').value;
+
+      const checkboxes = document.querySelectorAll('input[name="service"]:checked');
+      let selected = Array.from(checkboxes).map(cb => cb.value);
+
+      // Si "Otro" está seleccionado, formateamos el texto
+      if (document.getElementById('checkOtro').checked && detalleOtro !== "") {
+        selected = selected.map(val => val === "Otro" ? `✨ OTRO REQUERIMIENTO: (${detalleOtro})` : `🔹 ${val}`);
+      } else {
+        selected = selected.map(val => `🔹 ${val}`);
+      }
+
+      if (!name || selected.length === 0) {
+        alert("Por favor, ingresa tu nombre y elige al menos un servicio.");
+        return;
+      }
+
+      const phoneNumber = "523313862743";
+
+      // ESTRUCTURA MODERNA DEL MENSAJE
+      let message = `🚀 *NUEVA SOLICITUD DE COTIZACIÓN*%0A`;
+      message += `_______________________________%0A%0A`;
+      message += `👤 *CLIENTE:* ${name.toUpperCase()}%0A%0A`;
+      message += `🛠️ *SERVICIOS DE INTERÉS:*%0A${selected.join("%0A")}%0A%0A`;
+      message += `💬 *MENSAJE ADICIONAL:*%0A_${extraMsg}_%0A`;
+      message += `_______________________________%0A`;
+      message += `✉️ _Enviado desde el portal AAM Design_`;
+
+      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    }
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function rotateCarousel() {
+      const previousSlide = currentSlide;
+      currentSlide = (currentSlide + 1) % slides.length;
+
+      // 1. Aplicar efecto de hundimiento a la imagen que sale
+      slides[previousSlide].classList.add('slide-out');
+      slides[previousSlide].classList.remove('z-10');
+      slides[previousSlide].classList.add('z-0');
+
+      // 2. Preparar la imagen que entra
+      slides[currentSlide].classList.remove('slide-out');
+      slides[currentSlide].classList.add('slide-in');
+      slides[currentSlide].classList.remove('z-0');
+      slides[currentSlide].classList.add('z-10');
+      slides[currentSlide].style.opacity = "1";
+
+      // 3. Actualizar puntos
+      dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+          dot.classList.add('bg-blue-600', 'w-8');
+          dot.classList.remove('bg-gray-300', 'w-3');
+        } else {
+          dot.classList.remove('bg-blue-600', 'w-8');
+          dot.classList.add('bg-gray-300', 'w-3');
+        }
+      });
+
+      // Limpiar clases después de la animación para el siguiente ciclo
+      setTimeout(() => {
+        slides[previousSlide].style.opacity = "0";
+        slides[previousSlide].classList.remove('slide-out');
+        slides[currentSlide].classList.remove('slide-in');
+      }, 1000);
+    }
+
+    // Iniciar rotación cada 4 segundos
+    setInterval(rotateCarousel, 4000);
+
+  </script>
+  <script src="./src/assets/js/cookies.js"></script>
+</body>
+
+</html>

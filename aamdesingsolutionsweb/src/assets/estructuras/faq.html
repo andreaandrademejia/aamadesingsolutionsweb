@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preguntas Frecuentes | Marketing Digital</title>
+
+  <link href="/assets/css/output.css" rel="stylesheet">
+  <link href="/assets/css/input.css" rel="stylesheet">
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body id="body" class="font-poppins bg-gray-100 text-gray-800 antialiased">
+
+  <header id="header"
+    class="fixed top-0 left-0 w-full px-5 py-3 flex justify-between items-center z-50 transition-all duration-300 bg-gray-900 shadow-lg">
+    <div>
+      <a href="/index.html" class="text-2xl font-bold text-blue-300 hover:text-blue-100 transition-colors duration-200">
+        Marketing Digital
+      </a>
+    </div>
+    <div id="menu-icon" class="md:hidden cursor-pointer z-[100]">
+      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </div>
+    <nav id="navbar"
+      class="md:flex items-center space-x-8 md:static md:bg-transparent md:h-auto md:w-auto md:justify-end md:space-x-8 md:p-0">
+      <div class="relative group">
+        <button id="homeDropdownToggle"
+          class="hover:text-blue-300 focus:outline-none flex items-center text-white py-2 font-medium">
+          Home
+          <svg class="w-4 h-4 ml-1 fill-current transition-transform duration-200 group-hover:rotate-180"
+            viewBox="0 0 20 20">
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+          </svg>
+        </button>
+        <div id="homeDropdownMenu"
+          class="absolute left-0 mt-2 bg-white text-gray-800 border border-gray-200 shadow-md rounded-md overflow-hidden z-10 hidden md:group-hover:block transition-all duration-300 min-w-[160px]">
+          <ul>
+            <li><a href="/index.html"
+                class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-150">Inicio</a></li>
+            <li><a href="/assets/estructuras/blog.html"
+                class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-150">Blog</a></li>
+            <li><a href="/assets/estructuras/mapa-del-sitio.html"
+                class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-150">Mapa del Sitio</a></li>
+            <hr class="border-t border-gray-200 my-1">
+            <li><a href="https://brand24.com/blog/es/guia-para-principiantes-sobre-estrategia-de-marketing/"
+                class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-150" target="_blank"
+                rel="noopener noreferrer">Recurso 1</a></li>
+            <li><a href="https://rockcontent.com/es/blog/agencia-de-marketing/"
+                class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-150" target="_blank"
+                rel="noopener noreferrer">Recurso 2</a></li>
+          </ul>
+        </div>
+      </div>
+      <a href="/index.html#about"
+        class="text-white hover:text-blue-300 transition-colors duration-200 py-2 font-medium">About me</a>
+      <a href="/index.html#services"
+        class="text-white hover:text-blue-300 transition-colors duration-200 py-2 font-medium">Services</a>
+      <a href="/index.html#projects"
+        class="text-white hover:text-blue-300 transition-colors duration-200 py-2 font-medium">Projects</a>
+      <div class="relative group">
+        <button id="contactDropdownButton"
+          class="hover:text-blue-300 focus:outline-none flex items-center text-white py-2 font-medium">
+          Contact
+          <svg class="w-4 h-4 ml-1 fill-current transition-transform duration-200 group-hover:rotate-180"
+            viewBox="0 0 20 20">
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+          </svg>
+        </button>
+        <div id="contactDropdownMenu"
+          class="absolute right-0 mt-2 bg-white text-gray-800 border border-gray-200 shadow-md rounded-md overflow-hidden z-10 hidden md:group-hover:block transition-all duration-300 min-w-[160px]">
+          <div class="py-2">
+            <a href="/index.html#contact"
+              class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-150">Contact</a>
+            <a href="https://www.linkedin.com/in/andrea-arcelia-andrade-mejia-746660168/"
+              class="block px-4 py-2 hover:bg-gray-100 flex items-center transition-colors duration-150" target="_blank"
+              rel="noopener noreferrer"><i class='bx bxl-linkedin mr-2'></i>LinkedIn</a>
+            <a href="https://wa.me/523323292279?text=Hola,%20quiero%20contactarte%20por%20tu%20perfil%20de%20LinkedIn"
+              class="block px-4 py-2 hover:bg-gray-100 flex items-center transition-colors duration-150" target="_blank"
+              rel="noopener noreferrer">
+              <i class='bx bxl-whatsapp mr-2'></i> WhatsApp
+            </a>
+            <a href="mailto:andreaandrademejia@gmail.com?subject=¡Quiero%20contactarte!"
+              class="block px-4 py-2 hover:bg-gray-100 flex items-center transition-colors duration-150" target="_blank"
+              rel="noopener noreferrer">
+              <i class='bx bx-envelope mr-2' alt="Escríbeme"></i> Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="py-16 md:py-24" id="faq">
+      <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-800">Preguntas Frecuentes</h2>
+        <p class="text-lg md:text-xl text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+          Aquí encontrarás respuestas a las preguntas más comunes sobre mis servicios y procesos de trabajo.
+        </p>
+        <div class="flex justify-center mb-12">
+          <select id="categoryFilter"
+            class="p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 bg-white text-gray-800">
+            <option value="all">Todas las Categorías</option>
+            <option value="seo">SEO</option>
+            <option value="redes_sociales">Redes Sociales</option>
+            <option value="analitica_web">Analítica Web</option>
+            <option value="marketing_contenidos">Marketing de Contenidos</option>
+          </select>
+        </div>
+        <div class="space-y-6 max-w-4xl mx-auto">
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 border border-gray-200 hover:shadow-lg hover:shadow-blue-500/50 cursor-pointer accordion-item"
+            data-category="seo">
+            <h3 class="flex justify-between items-center p-6 text-xl font-semibold text-white bg-blue-500">
+              ¿Qué es el SEO y por qué es importante para mi negocio?
+              <i class='bx bx-chevron-down text-2xl text-white'></i>
+            </h3>
+            <div class="accordion-content hidden p-6 text-black-500 border-t border-gray-200 bg-white">
+              <p>El SEO (Search Engine Optimization) es el proceso de optimizar tu sitio web para mejorar su visibilidad
+                en los resultados de búsqueda orgánicos de los motores como Google. Es crucial para atraer tráfico
+                cualificado a tu página, lo que se traduce en más clientes potenciales y ventas. A través de técnicas
+                como el uso de palabras clave, la mejora de la velocidad del sitio y la creación de contenido de
+                calidad, el SEO te ayuda a destacar en un mercado competitivo.</p>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 border border-gray-200 hover:shadow-lg hover:shadow-blue-500/50 cursor-pointer accordion-item"
+            data-category="redes_sociales">
+            <h3 class="flex justify-between items-center p-6 text-xl font-semibold text-white bg-blue-500">
+              ¿Debo estar en todas las redes sociales?
+              <i class='bx bx-chevron-down text-2xl text-white'></i>
+            </h3>
+            <div class="accordion-content hidden p-6 text-black-500 border-t border-gray-200 bg-white">
+              <p>No, no es necesario. La clave es identificar dónde se encuentra tu público objetivo y centrar tus
+                esfuerzos allí. Durante mi consultoría, realizaremos un análisis para determinar las plataformas más
+                efectivas para tu marca, ya sea Facebook, Instagram, LinkedIn, TikTok u otra.</p>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 border border-gray-200 hover:shadow-lg hover:shadow-blue-500/50 cursor-pointer accordion-item"
+            data-category="analitica_web">
+            <h3 class="flex justify-between items-center p-6 text-xl font-semibold text-white bg-blue-500">
+              ¿Cómo sé si mi estrategia de marketing digital está funcionando?
+              <i class='bx bx-chevron-down text-2xl text-white'></i>
+            </h3>
+            <div class="accordion-content hidden p-6 text-black-500 border-t border-gray-200 bg-white">
+              <p>La analítica web es la respuesta. Utilizo herramientas como Google Analytics para rastrear métricas
+                clave como el tráfico del sitio, el comportamiento de los usuarios, las tasas de conversión y el retorno
+                de inversión (ROI). Esto me permite tomar decisiones basadas en datos y ajustar la estrategia para
+                obtener mejores resultados.</p>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 border border-gray-200 hover:shadow-lg hover:shadow-blue-500/50 cursor-pointer accordion-item"
+            data-category="marketing_contenidos">
+            <h3 class="flex justify-between items-center p-6 text-xl font-semibold text-white bg-blue-500">
+              ¿Cuánto tiempo se tarda en ver resultados del marketing digital?
+              <i class='bx bx-chevron-down text-2xl text-white'></i>
+            </h3>
+            <div class="accordion-content hidden p-6 text-black-500 border-t border-gray-200 bg-white">
+              <p>La respuesta varía según la estrategia. El SEO es un juego a largo plazo que puede tomar varios meses
+                para mostrar resultados significativos, mientras que la publicidad de pago (PPC) puede generar tráfico y
+                conversiones de inmediato. La clave es la paciencia y la consistencia; los mejores resultados provienen
+                de un enfoque a largo plazo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="flex flex-wrap justify-between items-center gap-4 py-4 px-8 bg-gray-900 text-white md:px-16">
+    <div class="text-sm text-center md:text-left">
+      <p class="mb-0">
+        Copyright &copy; <span id="year"></span> por [Nombre]. Todos los derechos reservados.
+      </p>
+    </div>
+    <div class="order-2 mx-auto md:order-none">
+      <a href="#body"
+        class="inline-flex justify-center items-center w-10 h-10 bg-gray-700 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:bg-blue-600">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+          class="w-5 h-5 text-white">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="/assets/js/faq.js"></script>
+</body>
+
+</html>
