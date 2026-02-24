@@ -67,3 +67,11 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
+
+# Ignorar videos pesados para que Git no se bloquee
+*.mp4
+*.mov
+*.avi
+# Ignorar carpetas de construcción viejas
+dist/
+node_modules/
