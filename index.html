@@ -586,86 +586,91 @@
       </button>
     </div>
   </div>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <script>
-    // Inicialización de animaciones
+    // 1. Inicialización de animaciones AOS
     AOS.init({ duration: 1000, once: true });
 
-    // Lógica del Menú Móvil
+    // 2. Lógica del Menú Móvil
     const menuIcon = document.getElementById('menu-icon');
     const navbar = document.getElementById('navbar');
-    menuIcon.onclick = () => {
-      navbar.classList.toggle('hidden');
-      navbar.classList.toggle('flex');
-      navbar.classList.toggle('flex-col');
-      navbar.classList.toggle('absolute');
-      navbar.classList.toggle('top-16');
-      navbar.classList.toggle('left-0');
-      navbar.classList.toggle('w-full');
-      navbar.classList.toggle('bg-gray-900');
-      navbar.classList.toggle('p-5');
-      navbar.classList.toggle('space-y-4');
-    };
+    if (menuIcon && navbar) {
+      menuIcon.onclick = () => {
+        navbar.classList.toggle('hidden');
+        navbar.classList.toggle('flex');
+        navbar.classList.toggle('flex-col');
+        navbar.classList.toggle('absolute');
+        navbar.classList.toggle('top-16');
+        navbar.classList.toggle('left-0');
+        navbar.classList.toggle('w-full');
+        navbar.classList.toggle('bg-gray-900');
+        navbar.classList.toggle('p-5');
+        navbar.classList.toggle('space-y-4');
+        navbar.style.zIndex = "50";
+      };
+    }
 
-    // Datos de los Modales de Servicio
+    // 3. Datos de los Modales de Servicio
     const infoData = {
       dominio: {
         title: "Dominio & Nube Firebase",
-        body: "Incluye registro de dominio (.com/.mx). El hosting se maneja vía Firebase (Plan Blaze); para activarlo, Google requiere una retención inicial de $1,800 MXN que se queda como saldo en tu cuenta. Esto te da acceso a $300 USD de crédito gratuito en Google Ads para anuncios y garantiza que solo pagues lo que tu web consuma realmente."
+        body: "Incluye registro de dominio (.com/.mx). El hosting se maneja vía Firebase (Plan Blaze); Google requiere una retención inicial de $1,800 MXN como saldo. Esto activa $300 USD de crédito en Google Ads y garantiza que solo pagues lo que consumas."
       },
       factura: {
         title: "Facturación Automática",
-        body: "Conectamos tu sitio con proveedores de CFDI para que tus clientes generen sus facturas al instante. Olvídate de la carga administrativa manual y cumple con el SAT de forma automática."
+        body: "Conexión con proveedores de CFDI para que tus clientes facturen al instante. Automatización total para ahorrar horas de oficina y cumplir con el SAT."
       },
       web: {
         title: "Desarrollo Web Pro",
-        body: "Creamos una plataforma optimizada para ventas. Diseño responsive de alta fidelidad, tiempos de carga mínimos y estructura SEO para que Google te encuentre fácilmente."
+        body: "Plataforma optimizada para ventas. Diseño responsive de alta fidelidad, carga rápida y estructura SEO para visibilidad nacional e internacional."
       },
       google: {
         title: "Visibilidad en Google Maps",
-        body: "Configuramos tu ficha de Google Business Pro. Optimizamos fotos, palabras clave y ubicación para que los clientes te contacten directamente desde el buscador."
+        body: "Optimización de Google Business Pro: fotos, palabras clave y ubicación estratégica para contacto directo desde el buscador."
       }
     };
 
-    function showInfo(type) {
-      document.getElementById('modalTitle').innerText = infoData[type].title;
-      document.getElementById('modalBody').innerText = infoData[type].body;
-      document.getElementById('infoModal').classList.remove('hidden');
-      document.getElementById('infoModal').classList.add('flex');
-    }
+    window.showInfo = function(type) {
+      const modal = document.getElementById('infoModal');
+      if (modal && infoData[type]) {
+        document.getElementById('modalTitle').innerText = infoData[type].title;
+        document.getElementById('modalBody').innerText = infoData[type].body;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    };
 
-    function closeModal() {
-      document.getElementById('infoModal').classList.add('hidden');
-    }
+    window.closeModal = function() {
+      const modal = document.getElementById('infoModal');
+      if (modal) modal.classList.add('hidden');
+    };
 
-    // --- NUEVAS FUNCIONES PARA EL FORMULARIO ---
-
-    // Función para mostrar/ocultar el campo extra cuando se marca "Otro"
-    function toggleOtro() {
+    // 4. Formulario y WhatsApp (Versión Business Gratuita)
+    window.toggleOtro = function() {
       const checkOtro = document.getElementById('checkOtro');
       const wrapperOtro = document.getElementById('wrapperOtro');
-
-      if (checkOtro.checked) {
-        wrapperOtro.classList.remove('hidden');
-        document.getElementById('detalleOtro').focus();
-      } else {
-        wrapperOtro.classList.add('hidden');
-        document.getElementById('detalleOtro').value = ""; // Limpia el texto si se desmarca
+      if (checkOtro && wrapperOtro) {
+        if (checkOtro.checked) {
+          wrapperOtro.classList.remove('hidden');
+          document.getElementById('detalleOtro').focus();
+        } else {
+          wrapperOtro.classList.add('hidden');
+          document.getElementById('detalleOtro').value = "";
+        }
       }
-    }
+    };
 
-    // Función de envío ACTUALIZADA para incluir el campo "Otro"
-    function sendWhatsApp() {
+    window.sendWhatsApp = function() {
       const name = document.getElementById('name').value;
       const extraMsg = document.getElementById('msg').value || "Sin comentarios adicionales";
       const detalleOtro = document.getElementById('detalleOtro').value;
-
       const checkboxes = document.querySelectorAll('input[name="service"]:checked');
+      
       let selected = Array.from(checkboxes).map(cb => cb.value);
 
-      // Si "Otro" está seleccionado, formateamos el texto
       if (document.getElementById('checkOtro').checked && detalleOtro !== "") {
-        selected = selected.map(val => val === "Otro" ? `✨ OTRO REQUERIMIENTO: (${detalleOtro})` : `🔹 ${val}`);
+        selected = selected.map(val => val === "Otro" ? `✨ OTRO: (${detalleOtro})` : `🔹 ${val}`);
       } else {
         selected = selected.map(val => `🔹 ${val}`);
       }
@@ -676,51 +681,42 @@
       }
 
       const phoneNumber = "523313862743";
-
-      // ESTRUCTURA MODERNA DEL MENSAJE
       let message = `🚀 *NUEVA SOLICITUD DE COTIZACIÓN*%0A`;
       message += `_______________________________%0A%0A`;
       message += `👤 *CLIENTE:* ${name.toUpperCase()}%0A%0A`;
-      message += `🛠️ *SERVICIOS DE INTERÉS:*%0A${selected.join("%0A")}%0A%0A`;
-      message += `💬 *MENSAJE ADICIONAL:*%0A_${extraMsg}_%0A`;
+      message += `🛠️ *SERVICIOS:*%0A${selected.join("%0A")}%0A%0A`;
+      message += `💬 *MENSAJE:*%0A_${extraMsg}_%0A`;
       message += `_______________________________%0A`;
-      message += `✉️ _Enviado desde el portal AAM Design_`;
+      message += `✉️ _Enviado desde AAM Design_`;
 
       window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-    }
+    };
 
+    // 5. Carrusel de Imágenes
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
 
     function rotateCarousel() {
+      if (slides.length === 0) return;
       const previousSlide = currentSlide;
       currentSlide = (currentSlide + 1) % slides.length;
 
-      // 1. Aplicar efecto de hundimiento a la imagen que sale
       slides[previousSlide].classList.add('slide-out');
-      slides[previousSlide].classList.remove('z-10');
-      slides[previousSlide].classList.add('z-0');
+      slides[previousSlide].classList.replace('z-10', 'z-0');
 
-      // 2. Preparar la imagen que entra
       slides[currentSlide].classList.remove('slide-out');
       slides[currentSlide].classList.add('slide-in');
-      slides[currentSlide].classList.remove('z-0');
-      slides[currentSlide].classList.add('z-10');
+      slides[currentSlide].classList.replace('z-0', 'z-10');
       slides[currentSlide].style.opacity = "1";
 
-      // 3. Actualizar puntos
       dots.forEach((dot, index) => {
-        if (index === currentSlide) {
-          dot.classList.add('bg-blue-600', 'w-8');
-          dot.classList.remove('bg-gray-300', 'w-3');
-        } else {
-          dot.classList.remove('bg-blue-600', 'w-8');
-          dot.classList.add('bg-gray-300', 'w-3');
-        }
+        dot.classList.toggle('bg-blue-600', index === currentSlide);
+        dot.classList.toggle('w-8', index === currentSlide);
+        dot.classList.toggle('bg-gray-300', index !== currentSlide);
+        dot.classList.toggle('w-3', index !== currentSlide);
       });
 
-      // Limpiar clases después de la animación para el siguiente ciclo
       setTimeout(() => {
         slides[previousSlide].style.opacity = "0";
         slides[previousSlide].classList.remove('slide-out');
@@ -728,11 +724,10 @@
       }, 1000);
     }
 
-    // Iniciar rotación cada 4 segundos
-    setInterval(rotateCarousel, 4000);
-
+    if (slides.length > 0) setInterval(rotateCarousel, 4000);
   </script>
-  <script src="./src/assets/js/cookies.js"></script>
+
+  <script src="src/assets/js/cookies.js"></script>
 </body>
 
 </html>
