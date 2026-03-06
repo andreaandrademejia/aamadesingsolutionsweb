@@ -1,15 +1,45 @@
 {
   "hosting": {
-    "public": ".",
+    "public": "aamdesingsolutionsweb",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
+    "cleanUrls": true,
+    "trailingSlash": false,
     "rewrites": [
       {
-        "source": "**",
+        "source": "/",
         "destination": "/index.html"
+      },
+      {
+        "source": "/blog",
+        "destination": "/src/assets/estructuras/blog.html"
+      },
+      {
+        "source": "/menu-digital",
+        "destination": "/src/assets/estructuras/menu-digital.html"
+      },
+      {
+        "source": "/autofactura-pro",
+        "destination": "/src/assets/estructuras/autofactura-pro.html"
+      },
+      {
+        "source": "/vende-24-7",
+        "destination": "/src/assets/estructuras/vende-24-7.html"
+      },
+      {
+        "source": "/aviso-privacidad",
+        "destination": "/src/assets/estructuras/aviso-privacidad.html"
+      },
+      {
+        "source": "/politica-cookies",
+        "destination": "/src/assets/estructuras/politica-cookies.html"
+      },
+      {
+        "source": "/faq",
+        "destination": "/src/assets/estructuras/faq.html"
       }
     ]
   }

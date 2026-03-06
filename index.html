@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AAM DESIGN & SOLUTIONS WEB</title>
+  <title>AAM
+    DESIGN SOLUTIONS WEB</title>
+  <link rel="icon" type="image/svg+xml"
+    href="./aamdesingsolutionsweb/src/assets/images/Logo for AAM Design Solutions Web - Version 1 (1).svg">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -20,6 +23,25 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
+    }
+
+    body,
+    html {
+      overflow-x: hidden;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Asegura que la animación de zoom no rompa el contenedor */
+    @keyframes slowZoom {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.1);
+      }
     }
 
     .container-slider img {
@@ -142,6 +164,27 @@
     .slide-in {
       animation: risingIn 1s forwards;
     }
+
+    /* Scroll para el formulario */
+    .custom-scroll-andrea::-webkit-scrollbar {
+      width: 5px;
+      /* Delgado y elegante */
+    }
+
+    .custom-scroll-andrea::-webkit-scrollbar-track {
+      background: transparent;
+      /* Invisible para no ensuciar la card */
+    }
+
+    .custom-scroll-andrea::-webkit-scrollbar-thumb {
+      background: #cbd5e0;
+      /* Gris profesional */
+      border-radius: 10px;
+    }
+
+    .custom-scroll-andrea::-webkit-scrollbar-thumb:hover {
+      background: #a0aec0;
+    }
   </style>
 </head>
 
@@ -151,7 +194,7 @@
     class="fixed top-0 left-0 w-full px-5 py-3 flex justify-between items-center z-50 bg-gray-900 shadow-lg">
     <div>
       <a href="index.html" class="text-2xl font-bold text-blue-300 hover:text-blue-100 transition-all">
-        AAM DESIGN & SOLUTIONS
+        AAM DESIGN SOLUTIONS WEB
       </a>
     </div>
 
@@ -212,8 +255,9 @@
   <main class="pt-16">
     <section class="relative w-full h-[85vh] overflow-hidden bg-gray-900">
       <img src="./aamdesingsolutionsweb/src/assets/images/Gemini_Generated_Image_16amu916amu916am.png"
-        alt="Marketing Digital" class="absolute inset-0 w-full h-full object-cover opacity-60"
+        alt="Marketing Digital" class="absolute inset-0 w-full h-full object-cover opacity-60 max-w-full block"
         style="animation: slowZoom 20s infinite alternate;">
+
       <div
         class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent flex items-center justify-start px-8 md:px-24">
         <div class="max-w-3xl" data-aos="fade-right">
@@ -221,15 +265,19 @@
             Soluciones <span class="text-blue-400">Digitales</span><br>
             <span class="text-3xl md:text-5xl font-light italic text-blue-100">A tu medida</span>
           </h1>
-          <p class="text-gray-200 mt-6 text-lg md:text-xl max-w-xl">Potenciamos tu marca con diseño web de vanguardia,
-            facturación electrónica y presencia profesional en Google.</p>
+          <p class="text-gray-200 mt-6 text-lg md:text-xl max-w-xl">
+            Potenciamos tu marca con diseño web de vanguardia, facturación electrónica y presencia profesional en
+            Google.
+          </p>
           <div class="mt-10 flex flex-wrap gap-4">
             <a href="#services"
-              class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg">Ver
-              Servicios</a>
+              class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg">
+              Ver Servicios
+            </a>
             <a href="#contact"
-              class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg">Asesoría
-              Gratis</a>
+              class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg">
+              Asesoría Gratis
+            </a>
           </div>
         </div>
       </div>
@@ -240,15 +288,15 @@
         <div class="w-full md:w-1/2 relative group" data-aos="fade-right">
           <div class="overflow-hidden rounded-3xl shadow-2xl relative h-[400px]">
             <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
-              <img src="./aamdesingsolutionsweb/src/assets/images/AdobeStock_1190459988_Preview.jpeg"
+              <img src="./aamdesingsolutionsweb/src/assets/images/Gemini_Generated_Image_y0ou5ay0ou5ay0ou.png"
                 class="w-full h-full object-cover" alt="Tecnología">
             </div>
             <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-              <img src="./aamdesingsolutionsweb/src/assets/images/AdobeStock_1209933871_Preview.jpeg"
+              <img src="./aamdesingsolutionsweb/src/assets/images/Gemini_Generated_Image_o9thdjo9thdjo9th.png"
                 class="w-full h-full object-cover" alt="Servidores">
             </div>
             <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-              <img src="./aamdesingsolutionsweb/src/assets/images/AdobeStock_1215489851_Preview.jpeg"
+              <img src="./aamdesingsolutionsweb/src/assets/images/Gemini_Generated_Image_11zned11zned11zn.png"
                 class="w-full h-full object-cover" alt="Diseño Web">
             </div>
 
@@ -385,14 +433,16 @@
             </div>
           </div>
 
-          <div class="bg-white p-8 md:p-10 rounded-3xl shadow-2xl" data-aos="fade-left">
-            <form id="whatsappForm" class="space-y-5">
+          <div class="bg-white p-8 md:p-10 rounded-3xl shadow-2xl h-full flex flex-col justify-between"
+            data-aos="fade-left">
+            <form id="whatsappForm" class="space-y-4">
               <input type="text" id="name" placeholder="Tu Nombre Completo" required
                 class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-blue-500 outline-none transition-all">
 
               <div class="space-y-3">
                 <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">¿Qué servicios necesitas?</p>
-                <div class="grid grid-cols-1 gap-2">
+
+                <div class="grid grid-cols-1 gap-2 max-h-60 overflow-y-auto pr-2 custom-scroll">
                   <label
                     class="flex items-center justify-between p-3 border rounded-xl hover:bg-blue-50 cursor-pointer transition-all">
                     <div class="flex items-center">
@@ -400,8 +450,9 @@
                         class="w-5 h-5 text-blue-600 rounded mr-3">
                       <span class="text-sm font-medium text-gray-700">Paquete Dominio Total</span>
                     </div>
-                    <button type="button" onclick="showInfo('dominio')" class="text-blue-500 text-xs"><i
-                        class='bx bx-info-circle'></i> Info</button>
+                    <button type="button" onclick="showInfo('dominio')" class="text-blue-500 text-xs">
+                      <i class='bx bx-info-circle'></i> Info
+                    </button>
                   </label>
 
                   <label
@@ -411,8 +462,9 @@
                         class="w-5 h-5 text-blue-600 rounded mr-3">
                       <span class="text-sm font-medium text-gray-700">Sistema de Facturación</span>
                     </div>
-                    <button type="button" onclick="showInfo('factura')" class="text-blue-500 text-xs"><i
-                        class='bx bx-info-circle'></i> Info</button>
+                    <button type="button" onclick="showInfo('factura')" class="text-blue-500 text-xs">
+                      <i class='bx bx-info-circle'></i> Info
+                    </button>
                   </label>
 
                   <label
@@ -422,8 +474,9 @@
                         class="w-5 h-5 text-blue-600 rounded mr-3">
                       <span class="text-sm font-medium text-gray-700">Web Personalizada (Básica/Pro)</span>
                     </div>
-                    <button type="button" onclick="showInfo('web')" class="text-blue-500 text-xs"><i
-                        class='bx bx-info-circle'></i> Info</button>
+                    <button type="button" onclick="showInfo('web')" class="text-blue-500 text-xs">
+                      <i class='bx bx-info-circle'></i> Info
+                    </button>
                   </label>
 
                   <label
@@ -433,8 +486,9 @@
                         class="w-5 h-5 text-blue-600 rounded mr-3">
                       <span class="text-sm font-medium text-gray-700">Google Business & Maps</span>
                     </div>
-                    <button type="button" onclick="showInfo('google')" class="text-blue-500 text-xs"><i
-                        class='bx bx-info-circle'></i> Info</button>
+                    <button type="button" onclick="showInfo('google')" class="text-blue-500 text-xs">
+                      <i class='bx bx-info-circle'></i> Info
+                    </button>
                   </label>
 
                   <label class="flex items-center p-3 border rounded-xl hover:bg-blue-50 cursor-pointer transition-all">
@@ -444,18 +498,19 @@
                   </label>
 
                   <div id="wrapperOtro" class="hidden animate__animated animate__fadeIn">
-                    <input type="text" id="detalleOtro" placeholder="¿Qué otro servicio o requerimiento tienes?"
+                    <input type="text" id="detalleOtro" placeholder="¿Qué otro servicio?"
                       class="w-full px-4 py-2 mt-1 rounded-lg bg-blue-50 border border-blue-200 focus:border-blue-500 outline-none text-sm italic">
                   </div>
                 </div>
+              </div>
 
-                <textarea id="msg" rows="3" placeholder="Mensaje adicional..."
-                  class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-blue-500 outline-none transition-all"></textarea>
+              <textarea id="msg" rows="2" placeholder="Mensaje adicional..."
+                class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-blue-500 outline-none transition-all resize-none"></textarea>
 
-                <button type="button" onclick="sendWhatsApp()"
-                  class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-xl shadow-lg flex items-center justify-center transition-all">
-                  <i class='bx bxl-whatsapp text-2xl mr-2'></i> Enviar
-                </button>
+              <button type="button" onclick="sendWhatsApp()"
+                class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-xl shadow-lg flex items-center justify-center transition-all">
+                <i class='bx bxl-whatsapp text-2xl mr-2'></i> Enviar Cotización
+              </button>
             </form>
           </div>
         </div>
@@ -463,11 +518,79 @@
     </section>
   </main>
 
+  <div id="privacy-modal" class="fixed inset-0 bg-black/80 z-[99999] hidden items-center justify-center p-4">
+    <div
+      class="bg-white text-gray-800 p-8 rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto relative shadow-2xl text-sm">
+      <button onclick="document.getElementById('privacy-modal').classList.add('hidden')"
+        class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-gray-600">&times;</button>
+      <h2 class="text-2xl font-bold text-blue-800 mb-4">Aviso de Privacidad</h2>
+      <p class="mb-4"><strong>Andrea Arcelia Andrade Mejia (AAM Design & Solutions)</strong>, con domicilio en Zapopan,
+        Jalisco, utilizará sus datos personales para proveer los servicios solicitados y gestionar los registros de
+        dominio ante terceros.</p>
+      <div class="mt-8 text-center">
+        <button onclick="document.getElementById('privacy-modal').classList.add('hidden')"
+          class="bg-blue-600 text-white px-8 py-2 rounded-full font-bold hover:bg-blue-700 transition-colors">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cmplz-cookiebanner" style="display: none;"
+    class="fixed bottom-0 left-0 w-full bg-white shadow-[0_-5px_25px_rgba(0,0,0,0.2)] z-[99999] p-6 border-t border-gray-100 animate__animated animate__fadeInUp">
+    <div class="container mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex-1 text-sm text-gray-700">
+          <h5 class="text-lg font-bold text-blue-900 mb-2">Uso de Cookies</h5>
+          <p>
+            Este sitio utiliza cookies para garantizar el funcionamiento y analizar el uso.
+            Consulta nuestro <a href="/aamdesingsolutionsweb/src/assets/estructuras/aviso-privacidad.html"
+              class="text-blue-600 font-bold underline">Aviso de Privacidad</a>
+            y <a href="/aamdesingsolutionsweb/src/assets/estructuras/politica-cookies.html"
+              class="text-blue-600 font-bold underline">Política de Cookies</a>.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <button onclick="acceptAll()"
+            class="bg-[#8cc63f] hover:bg-[#7ab234] text-white px-8 py-3 rounded-md font-bold transition-all min-w-[140px] shadow-sm">
+            Aceptar
+          </button>
+          <button onclick="togglePreferences()"
+            class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-md font-bold border border-gray-300 transition-all">
+            Preferencias
+          </button>
+          <button onclick="denyAll()"
+            class="bg-white hover:bg-gray-50 text-gray-400 px-6 py-3 rounded-md font-bold border border-gray-200 transition-all">
+            Rechazar
+          </button>
+        </div>
+      </div>
+
+      <div id="cookie-preferences" class="hidden mt-6 border-t pt-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <label class="flex items-center gap-2 p-3 border rounded-lg bg-gray-50">
+            <input type="checkbox" checked disabled class="accent-[#8cc63f]">
+            <span class="text-xs"><strong>Funcionales:</strong> Obligatorias.</span>
+          </label>
+          <label class="flex items-center gap-2 p-3 border rounded-lg hover:bg-blue-50 cursor-pointer">
+            <input type="checkbox" id="pref-stats" class="accent-[#8cc63f]">
+            <span class="text-xs"><strong>Estadísticas:</strong> Mejora de servicio.</span>
+          </label>
+          <label class="flex items-center gap-2 p-3 border rounded-lg hover:bg-blue-50 cursor-pointer">
+            <input type="checkbox" id="pref-marketing" class="accent-[#8cc63f]">
+            <span class="text-xs"><strong>Marketing:</strong> Personalización.</span>
+          </label>
+        </div>
+        <button onclick="savePreferences()" class="bg-blue-900 text-white px-6 py-2 rounded font-bold text-sm">Guardar
+          cambios</button>
+      </div>
+    </div>
+  </div>
+
   <footer class="bg-gray-900 text-white pt-16 pb-8 px-8 md:px-16 border-t border-gray-800">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
       <div class="space-y-4">
         <div class="flex items-center justify-center md:justify-start space-x-2">
-          <img src="./src/assets/images/Logo for AAM Design Solutions Web - Version 1.png" alt="Logo" class="h-10">
+          <img src="/aamdesingsolutionsweb/src/assets/images/Logo for AAM Design Solutions Web - Version 1.png"
+            alt="Logo" class="h-10">
           <span class="text-xl font-bold text-blue-300">AAM DESIGN</span>
         </div>
         <p class="text-gray-400 text-sm">Innovación digital en Zapopan, Jalisco.</p>
@@ -487,8 +610,10 @@
       <div>
         <h3 class="text-lg font-bold mb-6 border-b border-blue-500 inline-block">Legal</h3>
         <ul class="space-y-3 text-gray-400">
-          <li><a href="#privacy-modal" class="hover:text-white">Privacidad</a></li>
-          <li><a href="#" class="hover:text-white">Términos</a></li>
+          <li><a href="/aamdesingsolutionsweb/src/assets/estructuras/aviso-privacidad.html"
+              class="hover:text-white">Privacidad</a></li>
+          <li><a href="/aamdesingsolutionsweb/src/assets/estructuras/politica-cookies.html"
+              class="hover:text-white">Términos</a></li>
         </ul>
       </div>
       <div>
@@ -499,93 +624,55 @@
         </ul>
       </div>
     </div>
-    <div class="mt-16 text-center text-gray-500 text-xs italic">&copy; 2026 AAM Design & Solutions. Zapopan, Jalisco.
+    <div class="mt-16 text-center text-gray-500 text-xs italic">&copy; 2026 AAM Design Solutions Web. Zapopan,
+      Jalisco.
     </div>
   </footer>
 
-  <div id="infoModal" class="fixed inset-0 bg-gray-900/80 z-[300] hidden items-center justify-center p-4">
-    <div class="modal-card bg-white rounded-[2rem] p-8 animate__animated animate__fadeInUp animate__faster shadow-2xl">
-      <div class="flex justify-center mb-4">
-        <div class="bg-blue-100 p-4 rounded-full">
-          <i class='bx bx-cloud-upload text-4xl text-blue-600'></i>
+  <div id="infoModal"
+    class="fixed inset-0 bg-black/70 z-[1000] hidden items-center justify-center p-4 backdrop-blur-sm">
+    <div
+      class="bg-white rounded-[2rem] shadow-2xl max-w-sm w-full h-[400px] overflow-hidden flex flex-col animate__animated animate__zoomIn">
+
+      <div class="p-8 flex flex-col h-full">
+        <div class="text-center flex-shrink-0 mb-2">
+          <div class="inline-block bg-blue-50 p-3 rounded-full mb-2">
+            <i class='bx bx-info-circle text-3xl text-blue-600'></i>
+          </div>
+          <h3 id="modalTitle" class="text-xl font-bold text-blue-900 leading-tight px-2">Título</h3>
+        </div>
+
+        <div class="flex-grow overflow-y-auto my-4 pr-2 custom-scroll-andrea">
+          <p id="modalBody" class="text-gray-600 leading-relaxed text-sm text-center">
+          </p>
+        </div>
+
+        <div class="flex-shrink-0">
+          <button onclick="closeModal()"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-2xl transition-all shadow-md active:scale-95 uppercase text-sm tracking-wide">
+            Entendido, Gracias
+          </button>
         </div>
       </div>
-
-      <h3 id="modalTitle" class="text-2xl font-black mb-4"></h3>
-
-      <div class="modal-text-container">
-        <p id="modalBody" class="text-sm md:text-base"></p>
-      </div>
-
-      <button onclick="closeModal()"
-        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl transition-all shadow-lg hover:shadow-blue-500/30">
-        ENTENDIDO, GRACIAS
-      </button>
     </div>
   </div>
 
-  <div id="privacy-modal" class="fixed inset-0 bg-black/80 z-[200] hidden items-center justify-center p-4">
+  <div id="privacy-modal" class="fixed inset-0 bg-black/80 z-[99999] hidden items-center justify-center p-4">
     <div
       class="bg-white text-gray-800 p-8 rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto relative shadow-2xl text-sm">
-      <a href="#" class="absolute top-4 right-4 text-3xl text-gray-400">&times;</a>
+      <button onclick="document.getElementById('privacy-modal').classList.add('hidden')"
+        class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-gray-600">&times;</button>
       <h2 class="text-2xl font-bold text-blue-800 mb-4">Aviso de Privacidad</h2>
-      <p><strong>AAM Design & Solutions</strong>, con domicilio en Zapopan, Jalisco, utilizará sus datos personales para
+      <p><strong>AAM Design & Solutions</strong>, con domicilio en Zapopan, Jalisco, utilizará sus datos
+        personales para
         proveer los servicios solicitados y gestionar los registros de dominio ante terceros.</p>
-      <div class="mt-8 text-center"><a href="#"
-          class="bg-blue-600 text-white px-8 py-2 rounded-full font-bold">Cerrar</a></div>
+      <div class="mt-8 text-center">
+        <button onclick="document.getElementById('privacy-modal').classList.add('hidden')"
+          class="bg-blue-600 text-white px-8 py-2 rounded-full font-bold hover:bg-blue-700 transition-colors">Cerrar</button>
+      </div>
     </div>
   </div>
-  <div id="cmplz-cookiebanner"
-    class="fixed bottom-0 left-0 w-full bg-white shadow-[0_-5px_25px_rgba(0,0,0,0.1)] z-[999] p-6 animate__animated animate__fadeInUp">
-    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex-1 text-sm text-gray-700">
-        <h5 class="text-lg font-bold text-blue-900 mb-2">Uso de Cookies</h5>
-        <p>
-          Este sitio utiliza cookies y tecnologías similares para garantizar el correcto funcionamiento del sitio,
-          mejorar tu experiencia y analizar el uso del mismo.
-          Para más información, consulta nuestro <a href="./src/assets/estructuras/aviso-privacidad.html"
-            class="text-blue-600 font-bold underline">Aviso de Privacidad</a> y <a
-            href="./src/assets/estructuras/politica-cookies.html" class="text-blue-600 font-bold underline">Política de
-            Cookies</a>.
-        </p>
-      </div>
-      <div class="flex flex-wrap gap-3">
-        <button onclick="acceptAll()"
-          class="bg-[#8cc63f] hover:bg-[#7ab234] text-white px-8 py-3 rounded-md font-bold transition-all min-w-[140px]">
-          Aceptar
-        </button>
-        <button onclick="togglePreferences()"
-          class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-md font-bold border border-gray-300 transition-all">
-          Ver preferencias
-        </button>
-        <button onclick="denyAll()"
-          class="bg-white hover:bg-gray-50 text-gray-400 px-6 py-3 rounded-md font-bold border border-gray-200 transition-all">
-          Rechazar
-        </button>
-      </div>
-    </div>
 
-    <div id="cookie-preferences" class="hidden mt-6 border-t pt-6 transition-all">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-        <label class="flex items-center gap-2 p-3 border rounded-lg bg-gray-50">
-          <input type="checkbox" checked disabled class="accent-[#8cc63f]">
-          <span class="text-xs"><strong>Funcionales:</strong> Necesarias para el sitio.</span>
-        </label>
-        <label class="flex items-center gap-2 p-3 border rounded-lg hover:bg-blue-50 cursor-pointer">
-          <input type="checkbox" id="pref-stats" class="accent-[#8cc63f]">
-          <span class="text-xs"><strong>Estadísticas:</strong> Ayudan a mejorar el servicio.</span>
-        </label>
-        <label class="flex items-center gap-2 p-3 border rounded-lg hover:bg-blue-50 cursor-pointer">
-          <input type="checkbox" id="pref-marketing" class="accent-[#8cc63f]">
-          <span class="text-xs"><strong>Marketing:</strong> Publicidad personalizada.</span>
-        </label>
-      </div>
-      <button onclick="savePreferences()"
-        class="w-full md:w-auto bg-blue-900 text-white px-6 py-2 rounded font-bold text-sm">
-        Guardar preferencias
-      </button>
-    </div>
-  </div>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <script>
@@ -633,9 +720,15 @@
 
     window.showInfo = function (type) {
       const modal = document.getElementById('infoModal');
+      const scrollArea = document.querySelector('.custom-scroll-andrea');
+
       if (modal && infoData[type]) {
         document.getElementById('modalTitle').innerText = infoData[type].title;
-        document.getElementById('modalBody').innerText = infoData[type].body;
+        document.getElementById('modalBody').innerHTML = infoData[type].body;
+
+        // Regresar el scroll al inicio automáticamente
+        if (scrollArea) scrollArea.scrollTop = 0;
+
         modal.classList.remove('hidden');
         modal.classList.add('flex');
       }
@@ -646,88 +739,111 @@
       if (modal) modal.classList.add('hidden');
     };
 
-    // 4. Formulario y WhatsApp (Versión Business Gratuita)
-    window.toggleOtro = function () {
-      const checkOtro = document.getElementById('checkOtro');
-      const wrapperOtro = document.getElementById('wrapperOtro');
-      if (checkOtro && wrapperOtro) {
-        if (checkOtro.checked) {
-          wrapperOtro.classList.remove('hidden');
-          document.getElementById('detalleOtro').focus();
-        } else {
-          wrapperOtro.classList.add('hidden');
-          document.getElementById('detalleOtro').value = "";
-        }
-      }
-    };
+    window.sendWhatsApp = function (event) {
+      // 1. Evitamos que el formulario se envíe por defecto y recargue la página
+      if (event) event.preventDefault();
 
-    window.sendWhatsApp = function () {
-      const name = document.getElementById('name').value;
-      const extraMsg = document.getElementById('msg').value || "Sin comentarios adicionales";
-      const detalleOtro = document.getElementById('detalleOtro').value;
+      const name = document.getElementById('name').value.trim();
+      const extraMsg = document.getElementById('msg').value.trim() || "Sin comentarios adicionales";
+      const detalleOtro = document.getElementById('detalleOtro').value.trim();
       const checkboxes = document.querySelectorAll('input[name="service"]:checked');
 
-      let selected = Array.from(checkboxes).map(cb => cb.value);
-
-      if (document.getElementById('checkOtro').checked && detalleOtro !== "") {
-        selected = selected.map(val => val === "Otro" ? `✨ OTRO: (${detalleOtro})` : `🔹 ${val}`);
-      } else {
-        selected = selected.map(val => `🔹 ${val}`);
-      }
-
-      if (!name || selected.length === 0) {
+      // Validaciones básicas
+      if (!name || checkboxes.length === 0) {
         alert("Por favor, ingresa tu nombre y elige al menos un servicio.");
         return;
       }
 
+      // 2. Construimos la lista de servicios limpia
+      let selected = Array.from(checkboxes).map(cb => {
+        if (cb.value === "Otro" && detalleOtro !== "") {
+          return `✨ OTRO: (${detalleOtro})`;
+        }
+        return `🔹 ${cb.value}`;
+      });
+
+      // 3. Construimos el mensaje usando saltos de línea naturales (\n)
+      // Usamos una sola variable para evitar concatenaciones ruidosas
       const phoneNumber = "523313862743";
-      let message = `🚀 *NUEVA SOLICITUD DE COTIZACIÓN*%0A`;
-      message += `_______________________________%0A%0A`;
-      message += `👤 *CLIENTE:* ${name.toUpperCase()}%0A%0A`;
-      message += `🛠️ *SERVICIOS:*%0A${selected.join("%0A")}%0A%0A`;
-      message += `💬 *MENSAJE:*%0A_${extraMsg}_%0A`;
-      message += `_______________________________%0A`;
-      message += `✉️ _Enviado desde AAM Design_`;
+      const textoMensaje =
+        `🚀 *NUEVA SOLICITUD DE COTIZACIÓN*
+_______________________________
 
-      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+👤 *CLIENTE:* ${name.toUpperCase()}
+
+🛠️ *SERVICIOS:*
+${selected.join('\n')}
+
+💬 *MENSAJE:*
+_${extraMsg}_
+
+_______________________________
+✉️ _Enviado desde AAM Design_`;
+
+      // 4. Codificamos TODO el mensaje al final. 
+      // Esto elimina los diamantes con signos de interrogación y los duplicados.
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(textoMensaje)}`;
+
+      window.open(url, '_blank');
     };
-
-    // 5. Carrusel de Imágenes
+    // 5. Carrusel de Imágenes (Lógica original preservada)
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
 
     function rotateCarousel() {
       if (slides.length === 0) return;
-      const previousSlide = currentSlide;
-      currentSlide = (currentSlide + 1) % slides.length;
+      const nextSlide = (currentSlide + 1) % slides.length;
 
-      slides[previousSlide].classList.add('slide-out');
-      slides[previousSlide].classList.replace('z-10', 'z-0');
-
-      slides[currentSlide].classList.remove('slide-out');
-      slides[currentSlide].classList.add('slide-in');
-      slides[currentSlide].classList.replace('z-0', 'z-10');
-      slides[currentSlide].style.opacity = "1";
+      slides[currentSlide].style.opacity = "0";
+      slides[nextSlide].style.opacity = "1";
 
       dots.forEach((dot, index) => {
-        dot.classList.toggle('bg-blue-600', index === currentSlide);
-        dot.classList.toggle('w-8', index === currentSlide);
-        dot.classList.toggle('bg-gray-300', index !== currentSlide);
-        dot.classList.toggle('w-3', index !== currentSlide);
+        dot.classList.toggle('bg-blue-600', index === nextSlide);
+        dot.classList.toggle('w-8', index === nextSlide);
+        dot.classList.toggle('bg-gray-300', index !== nextSlide);
       });
 
-      setTimeout(() => {
-        slides[previousSlide].style.opacity = "0";
-        slides[previousSlide].classList.remove('slide-out');
-        slides[currentSlide].classList.remove('slide-in');
-      }, 1000);
+      currentSlide = nextSlide;
     }
-
     if (slides.length > 0) setInterval(rotateCarousel, 4000);
-  </script>
 
-  <script src="src/assets/js/cookies.js"></script>
+    // 6. CONTROL DE COOKIES (Integrado sin conflictos)
+    const banner = document.getElementById('cmplz-cookiebanner');
+    const prefs = document.getElementById('cookie-preferences');
+
+    window.onload = () => {
+      if (!localStorage.getItem('cookies-aceptadas')) {
+        setTimeout(() => {
+          if (banner) banner.style.display = 'block';
+        }, 500);
+      }
+    };
+
+    window.acceptAll = function () {
+      localStorage.setItem('cookies-aceptadas', 'true');
+      banner.classList.add('animate__fadeOutDown');
+      setTimeout(() => { banner.style.display = 'none'; }, 500);
+    };
+
+    window.denyAll = function () {
+      localStorage.setItem('cookies-aceptadas', 'false');
+      banner.classList.add('animate__fadeOutDown');
+      setTimeout(() => { banner.style.display = 'none'; }, 500);
+    };
+
+    window.togglePreferences = function () {
+      if (prefs) prefs.classList.toggle('hidden');
+    };
+
+    window.savePreferences = function () {
+      const stats = document.getElementById('pref-stats').checked;
+      const marketing = document.getElementById('pref-marketing').checked;
+      localStorage.setItem('cookies-config', JSON.stringify({ stats, marketing }));
+      window.acceptAll();
+    };
+  </script>
+  <script src="/aamdesingsolutionsweb/src/assets/js/cookies.js"></script>
 </body>
 
 </html>
